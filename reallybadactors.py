@@ -53,7 +53,11 @@ urlss = ["http://rules.emergingthreats.net/blockrules/compromised-ips.txt",
 
 
 for urls in urlss:
-        copy = urlopen(urls)
+        try:
+            copy = urlopen(urls)
+        except:
+            pass
+            continue
         ips = []
         count = 0
         start = time.time()
